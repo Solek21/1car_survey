@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR Survey</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">CAR Survey</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <!-- {{ form.name.label_tag }} --> Имя
+                        {{ form.name }}
+                    </div>
+                    <div class="form-group">
+                        <!-- {{ form.favorite_food.label_tag }} --> Любимая марка 
+                        {{ form.favorite_car }}
+                    </div>
+                    <div class="form-group">
+                        <!-- {{ form.preferred_cuisine.label_tag }} --> Предпочитаемая цвет автомобиля
+                        {{ form.preferred_color }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
